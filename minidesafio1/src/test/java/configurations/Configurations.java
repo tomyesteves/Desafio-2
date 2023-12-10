@@ -8,7 +8,7 @@ public class Configurations {
 
     public static void init() {
         // Driver configuration.
-        System.setProperty("webdriver.edge.driver", "C:/EdgeDriver/edgedriver_win64/msedgedriver.exe");
+        System.setProperty(Variables.driverKey, Variables.driverPath);
         driver = new EdgeDriver();
         driver.manage().window().maximize();
 

@@ -18,11 +18,8 @@ public class HomePage {
     }
 
     public void search(String text) {
-        //driver.findElement(searchButtonLocator).click();
-        //driver.findElement(searchBoxLocator).sendKeys(text);
-        //driver.findElement(searchButtonLocator).sendKeys(Keys.ENTER);
         driver.findElement(searchButtonLocator).click();
         driver.findElement(searchBoxLocator).click();
-        driver.findElement(searchBoxLocator).sendKeys("Ingeniería", Keys.ENTER);
+        driver.findElement(searchBoxLocator).sendKeys(text, Keys.ENTER);
     }
 }
