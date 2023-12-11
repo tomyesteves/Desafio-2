@@ -15,6 +15,7 @@ public class Configurations {
     }
 
     public static void closeBrowser() {
-        //driver.quit();
+        // Driver closes when test ends.
+        driver.quit();
     }
 }
