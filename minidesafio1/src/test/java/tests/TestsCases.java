@@ -85,13 +85,6 @@ public class TestsCases extends Configurations {
         assertTrue(currentUrl.equals(expectedUrlIfFail));
     }
 
-    private void SwitchTab(int tab) throws InterruptedException {
-        Thread.sleep(3000);
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-        // Redirect to WebAsignatura tab.
-        driver.switchTo().window(tabs.get(tab));
-    }
-
     @Test
     public void testMinors() throws InterruptedException {
         MinorsPage minorsPage = new MinorsPage(driver);
@@ -107,5 +100,12 @@ public class TestsCases extends Configurations {
         // Wait for the form to be submitted.
         Thread.sleep(3000);
         assertTrue(minorsPage.GetErrorMessage().equals("El valor de Email no tiene formato de mail."));
+    }
+
+    private void SwitchTab(int tab) throws InterruptedException {
+        Thread.sleep(3000);
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        // Redirect to WebAsignatura tab.
+        driver.switchTo().window(tabs.get(tab));
     }
 }
