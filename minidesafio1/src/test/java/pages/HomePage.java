@@ -17,7 +17,7 @@ public class HomePage {
         this.driver.get(Variables.ucuBaseUrl);
     }
 
-    public void search(String text) {
+    public void Search(String text) {
         driver.findElement(searchButtonLocator).click();
         driver.findElement(searchBoxLocator).click();
         driver.findElement(searchBoxLocator).sendKeys(text, Keys.ENTER);

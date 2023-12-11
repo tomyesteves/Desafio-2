@@ -16,7 +16,7 @@ public class InternationalPage {
         this.driver.get(Variables.ucuBaseUrl);
     }
 
-    public void visitExternalPage() {
+    public void VisitExternalPage() {
         driver.findElement(internationalLink).click();
         driver.findElement(seeAllButton).click();
         driver.findElement(externalPageLink).click();

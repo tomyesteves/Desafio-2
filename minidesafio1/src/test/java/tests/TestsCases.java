@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import configurations.Configurations;
 import configurations.Variables;
 import pages.InternationalPage;
+import pages.SaltoCampusPage;
 import pages.HomePage;
 
 public class TestsCases extends Configurations {
@@ -34,7 +35,7 @@ public class TestsCases extends Configurations {
 
         driver.get(Variables.ucuBaseUrl);
         HomePage homePage = new HomePage(driver);
-        homePage.search(textToSearch);
+        homePage.Search(textToSearch);
         assertTrue(driver.getPageSource().contains(expectedTextWhenSearch));
     }
 
@@ -43,14 +44,31 @@ public class TestsCases extends Configurations {
         String expectedUrl = "https://www.fiuc.org/index_es.html";
         driver.get(Variables.ucuBaseUrl);
         InternationalPage internationalPage = new InternationalPage(driver);
-        internationalPage.visitExternalPage();
+        internationalPage.VisitExternalPage();
 
-        // Wait for the new tab to open.
-        Thread.sleep(7000);
+        // Wait for the external page to open.
+        Thread.sleep(5000);
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-
+        // Redirect to FIUC tab.
         driver.switchTo().window(tabs.get(1));
+
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.equals(expectedUrl));
+    }
+
+    @Test
+    public void testCampusSalto() throws InterruptedException {
+        String expectedCourse = "Desafío II";
+        SaltoCampusPage saltoCampusPage = new SaltoCampusPage(driver);
+        saltoCampusPage.GoToCampusSalto();
+
+        // Wait for the Campus Salto page to open.
+        Thread.sleep(3000);
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        // Redirect to Campus Salto tab.
+        driver.switchTo().window(tabs.get(1));
+
+        saltoCampusPage.SeeSoftwareDeveloperCourses();
+        assertTrue(driver.getPageSource().contains(expectedCourse));
     }
 }
