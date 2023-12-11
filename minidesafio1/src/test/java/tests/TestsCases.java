@@ -8,10 +8,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import configurations.Configurations;
 import configurations.Variables;
 import pages.InternationalPage;
 import pages.SaltoCampusPage;
+import pages.WebAsignaturaPage;
 import pages.HomePage;
 
 public class TestsCases extends Configurations {
@@ -70,5 +73,26 @@ public class TestsCases extends Configurations {
 
         saltoCampusPage.SeeSoftwareDeveloperCourses();
         assertTrue(driver.getPageSource().contains(expectedCourse));
+    }
+
+    @Test
+    public void testWebAsignatura() throws InterruptedException {
+        String urlResource = "login/index.php";
+        String expectedUrlIfFail = Variables.ucuWebAsignaturaUrl + urlResource;
+        WebAsignaturaPage webAsignaturaPage = new WebAsignaturaPage(driver);
+        webAsignaturaPage.GoToWebAsignatura();
+
+        // Wait for the external page to open.
+        Thread.sleep(5000);
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        // Redirect to WebAsignatura tab.
+        driver.switchTo().window(tabs.get(1));
+
+        String username = "username";
+        String password = "password";
+        webAsignaturaPage.FailLoginWebAsignatura(username, password);
+        
+        String currentUrl = driver.getCurrentUrl();
+        assertTrue(currentUrl.equals(expectedUrlIfFail));
     }
 }

@@ -32,16 +32,4 @@ public class SaltoCampusPage {
         driver.findElement(softwareDeveloperCareer).click();
         driver.findElement(softwareDeveloperCourses).click();
     }
-    /*
-     * driver.findElement(By.linkText("Calendario académico")).click();
-    vars.put("win2695", waitForWindow(2000));
-    driver.switchTo().window(vars.get("win2695").toString());
-    driver.findElement(By.linkText("Calendario académico 2024")).click();
-    driver.findElement(By.id("newLocation")).click();
-    driver.findElement(By.linkText("Ir al Campus")).click();
-    driver.findElement(By.cssSelector(".fill-btn")).click();
-    driver.findElement(By.linkText("Desarrollador de Software")).click();
-    driver.findElement(By.cssSelector(".year__title--2")).click();
-    driver.findElement(By.cssSelector(".js-courses-2 > .year__item:nth-child(4)")).click();
-     */
 }
