@@ -5,7 +5,9 @@ import org.junit.Before;
 import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
@@ -45,5 +47,123 @@ public class GeneratedTestCases {
         driver.findElement(By.linkText("Vaticano")).click();
         driver.findElement(By.linkText("FAQ")).click();
         driver.findElement(By.linkText("Contactos")).click();
+    }
+
+    @Test
+    public void testSpaceAndBeyond() {
+        driver.get("https://demo.testim.io/");
+        driver.manage().window().setSize(new Dimension(1696, 1026));
+        driver.findElement(By.cssSelector(".NavButton__nav-button___34wHC")).click();
+        {
+            WebElement element = driver.findElement(By.cssSelector(".NavButton__nav-button___34wHC"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).perform();
+        }
+        {
+            WebElement element = driver.findElement(By.tagName("body"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element, 0, 0).perform();
+        }
+        driver.findElement(By.cssSelector(".Login__field___2oefU:nth-child(1) > .theme__inputElement___27dyY")).click();
+        driver.findElement(By.cssSelector(".Login__field___2oefU > .theme__filled___1UI7Z")).sendKeys("tomy");
+        driver.findElement(By.cssSelector(".Login__field___2oefU:nth-child(2) > .theme__inputElement___27dyY")).click();
+        {
+            WebElement element = driver.findElement(By.cssSelector(".LoginButton__raised___1fUxJ"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).perform();
+        }
+        driver.findElement(By.cssSelector(".Login__field___2oefU:nth-child(2) > .theme__inputElement___27dyY"))
+                .sendKeys("adminadmin");
+        driver.findElement(By.cssSelector(".LoginButton__raised___1fUxJ")).click();
+        {
+            WebElement element = driver.findElement(
+                    By.cssSelector(".Hero__date-picker-box___RaqVV:nth-child(1) .theme__inputElement___27dyY"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).clickAndHold().perform();
+        }
+        {
+            WebElement element = driver.findElement(By.cssSelector(".theme__backdrop___WbaQn"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).release().perform();
+        }
+        driver.findElement(By.cssSelector("body")).click();
+        driver.findElement(By.cssSelector(".theme__day___3cb3g:nth-child(28) > span")).click();
+        {
+            WebElement element = driver.findElement(By.cssSelector(".theme__button___3HGWm:nth-child(2)"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).perform();
+        }
+        driver.findElement(By.cssSelector(".theme__button___3HGWm:nth-child(2)")).click();
+        {
+            WebElement element = driver.findElement(By.tagName("body"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element, 0, 0).perform();
+        }
+        {
+            WebElement element = driver
+                    .findElement(By.cssSelector(".Box__box___2XzJ2:nth-child(2) .theme__inputElement___27dyY"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).clickAndHold().perform();
+        }
+        {
+            WebElement element = driver.findElement(By.cssSelector(".theme__header___1DCA-"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).release().perform();
+        }
+        driver.findElement(By.cssSelector("body")).click();
+        driver.findElement(By.cssSelector(".theme__day___3cb3g:nth-child(17) > span")).click();
+        {
+            WebElement element = driver.findElement(By.cssSelector(".theme__button___3HGWm:nth-child(2)"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).perform();
+        }
+        driver.findElement(By.cssSelector(".theme__button___3HGWm:nth-child(2)")).click();
+        {
+            WebElement element = driver.findElement(By.tagName("body"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element, 0, 0).perform();
+        }
+        {
+            WebElement element = driver
+                    .findElement(By.cssSelector(".theme__active___31xyK .theme__inputElement___27dyY"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).clickAndHold().perform();
+        }
+        {
+            WebElement element = driver.findElement(By.cssSelector(".theme__active___31xyK li:nth-child(2)"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).release().perform();
+        }
+        driver.findElement(By.cssSelector(".theme__active___31xyK")).click();
+        driver.findElement(By.cssSelector(".theme__active___31xyK li:nth-child(4)")).click();
+        {
+            WebElement element = driver
+                    .findElement(By.cssSelector(".theme__active___31xyK .theme__inputElement___27dyY"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).clickAndHold().perform();
+        }
+        {
+            WebElement element = driver.findElement(By.cssSelector(".theme__active___31xyK li:nth-child(2)"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).release().perform();
+        }
+        driver.findElement(By.cssSelector(".theme__active___31xyK")).click();
+        driver.findElement(By.cssSelector(".theme__active___31xyK li:nth-child(4)")).click();
+        driver.findElement(By.cssSelector(".Hero__cta-button___9VskW")).click();
+        driver.findElement(By.cssSelector(".theme__card___2nWQb:nth-child(6) .theme__button___1iKuo")).click();
+        driver.findElement(By.cssSelector(".CustomerInfo__input___eFffe:nth-child(1) > .theme__inputElement___27dyY"))
+                .click();
+        driver.findElement(By.cssSelector(".CustomerInfo__input___eFffe > .theme__filled___1UI7Z")).sendKeys("tomas");
+        driver.findElement(By.cssSelector(".CustomerInfo__input___eFffe:nth-child(2) > .theme__inputElement___27dyY"))
+                .sendKeys("abc@gmail.com");
+        driver.findElement(By.cssSelector(".theme__input___qUQeP:nth-child(3) > .theme__inputElement___27dyY"))
+                .sendKeys("123-12-1234");
+        driver.findElement(By.cssSelector(".theme__input___qUQeP:nth-child(4) > .theme__inputElement___27dyY"))
+                .sendKeys("12345");
+        driver.findElement(By.name("promo")).click();
+        driver.findElement(By.name("promo")).sendKeys("123");
+        driver.findElement(By.cssSelector(".theme__check___2B20W")).click();
+        driver.findElement(By.cssSelector(".flexboxgrid__row___1y_mg:nth-child(8) > .flexboxgrid__col-xs___1ROHR"))
+                .click();
     }
 }

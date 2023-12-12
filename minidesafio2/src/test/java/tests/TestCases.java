@@ -9,8 +9,9 @@ import org.openqa.selenium.WebDriver;
 import configurations.Configurations;
 import configurations.Variables;
 import pages.ColosseumHomePage;
+import pages.SpaceAndBeyondHomePage;
 
-public class TestsCases extends Configurations {
+public class TestCases extends Configurations {
     private WebDriver driver;
 
     @Before
@@ -27,11 +28,19 @@ public class TestsCases extends Configurations {
     @Test
     public void testSurfTheNav() {
         String expectedTitle = "Contactos - El Coliseo";
-        driver.get(Variables.theColosseumBaseUrl);
         ColosseumHomePage colosseumHomePage = new ColosseumHomePage(driver);
         colosseumHomePage.RejectCookies();
         colosseumHomePage.SurfTheNav();
         assertTrue(driver.getTitle().equals(expectedTitle));
+    }
+
+    @Test
+    public void testSpaceAndBeyond() throws InterruptedException {
+        SpaceAndBeyondHomePage spaceAndBeyondHomePage = new SpaceAndBeyondHomePage(driver);
+        spaceAndBeyondHomePage.Login("tomy", "adminadmin");
+        Thread.sleep(2000);
+        spaceAndBeyondHomePage.SelectJourney();
+        spaceAndBeyondHomePage.Checkout();
     }
 
     private void SwitchTab(int tab) throws InterruptedException {
