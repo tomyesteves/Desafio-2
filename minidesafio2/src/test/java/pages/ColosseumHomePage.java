@@ -6,6 +6,7 @@ import configurations.Variables;
 
 public class ColosseumHomePage {
     private WebDriver driver;
+    private Utils utils;
 
     By cookiesButton = By.cssSelector("#iubenda-cs-banner > div > div > div > div.iubenda-cs-opt-group > div.iubenda-cs-opt-group-consent > button.iubenda-cs-reject-btn.iubenda-cs-btn-primary");
     By infoTicketsNav = By.linkText("Info Boletos");
@@ -24,26 +25,26 @@ public class ColosseumHomePage {
 
     public ColosseumHomePage(WebDriver driver) {
         this.driver = driver;
-        this.driver.get(Variables.theColosseumBaseUrl);
+        this.utils = new Utils(this.driver, Variables.theColosseumBaseUrl);
     }
 
     public void RejectCookies() {
-        driver.findElement(cookiesButton).click();
+        utils.ClickElement(cookiesButton);
     }
 
     public void SurfTheNav() {
-        driver.findElement(infoTicketsNav).click();
-        driver.findElement(theUndergroundsNav).click();
-        driver.findElement(forumNav).click();
-        driver.findElement(colosseumNightNav).click();
-        driver.findElement(guidedToursNav).click();
-        driver.findElement(howToGetToNav).click();
-        driver.findElement(christmas2023Nav).click();
-        driver.findElement(freeNav).click();
-        driver.findElement(exhibitionsNav).click();
-        driver.findElement(kidsNav).click();
-        driver.findElement(vaticanNav).click();
-        driver.findElement(faqNav).click();
-        driver.findElement(contactsNav).click();
+        utils.ClickElement(infoTicketsNav);
+        utils.ClickElement(theUndergroundsNav);
+        utils.ClickElement(forumNav);
+        utils.ClickElement(colosseumNightNav);
+        utils.ClickElement(guidedToursNav);
+        utils.ClickElement(howToGetToNav);
+        utils.ClickElement(christmas2023Nav);
+        utils.ClickElement(freeNav);
+        utils.ClickElement(exhibitionsNav);
+        utils.ClickElement(kidsNav);
+        utils.ClickElement(vaticanNav);
+        utils.ClickElement(faqNav);
+        utils.ClickElement(contactsNav);
     }
 }

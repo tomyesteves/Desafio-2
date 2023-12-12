@@ -1,13 +1,11 @@
 package tests;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import java.util.ArrayList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import configurations.Configurations;
-import configurations.Variables;
 import pages.ColosseumHomePage;
 import pages.SpaceAndBeyondHomePage;
 
@@ -41,12 +39,5 @@ public class TestCases extends Configurations {
         Thread.sleep(2000);
         spaceAndBeyondHomePage.SelectJourney();
         spaceAndBeyondHomePage.Checkout();
-    }
-
-    private void SwitchTab(int tab) throws InterruptedException {
-        Thread.sleep(3000);
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-        // Redirect to WebAsignatura tab.
-        driver.switchTo().window(tabs.get(tab));
     }
 }
