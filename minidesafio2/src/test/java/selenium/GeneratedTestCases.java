@@ -166,4 +166,27 @@ public class GeneratedTestCases {
         driver.findElement(By.cssSelector(".flexboxgrid__row___1y_mg:nth-child(8) > .flexboxgrid__col-xs___1ROHR"))
                 .click();
     }
+
+    public void testPets() {
+        driver.get("https://petstore.octoperf.com/actions/Catalog.action");
+        driver.manage().window().setSize(new Dimension(1696, 1026));
+        driver.findElement(By.linkText("Sign In")).click();
+        driver.findElement(By.linkText("Register Now!")).click();
+        driver.findElement(By.name("password")).click();
+        driver.findElement(By.cssSelector("#Catalog > form")).click();
+        driver.findElement(By.name("password")).sendKeys("admin");
+        driver.findElement(By.name("repeatedPassword")).sendKeys("admin");
+        driver.findElement(By.name("account.address1")).sendKeys("calle 123");
+        driver.findElement(By.name("newAccount")).click();
+        driver.findElement(By.id("stripes--1140036230")).click();
+        driver.findElement(By.id("stripes--1140036230")).sendKeys("tomasesteves");
+        driver.findElement(By.name("newAccount")).click();
+        driver.findElement(By.cssSelector("a:nth-child(9) > img")).click();
+        driver.findElement(By.linkText("AV-CB-01")).click();
+        driver.findElement(By.linkText("Add to Cart")).click();
+        driver.findElement(By.linkText("Proceed to Checkout")).click();
+        driver.findElement(By.name("newOrder")).click();
+        driver.findElement(By.linkText("Confirm")).click();
+        driver.findElement(By.linkText("Return to Main Menu")).click();
+      }
 }

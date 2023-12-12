@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import configurations.Configurations;
 import pages.ColosseumHomePage;
+import pages.PetsPage;
 import pages.SpaceAndBeyondHomePage;
 
 public class TestCases extends Configurations {
@@ -39,5 +40,15 @@ public class TestCases extends Configurations {
         Thread.sleep(2000);
         spaceAndBeyondHomePage.SelectJourney();
         spaceAndBeyondHomePage.Checkout();
+    }
+
+    @Test
+    public void testPets() {
+        PetsPage petsPage = new PetsPage(driver);
+        petsPage.Register("tomasitotototot", "1234", "1234", "tomas", "esteves", "test@gmail.com", "099123456", "calle 1234", "Salto", "Salto", "50000", "Uruguay");
+        
+        // Esto se podría hacer una vez se encuentre forma de solucionar lo del selector dinamico
+        //petsPage.AddItemsToCart();
+        //petsPage.Checkout();
     }
 }
