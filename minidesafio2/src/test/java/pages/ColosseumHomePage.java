@@ -21,7 +21,6 @@ public class ColosseumHomePage {
     By kidsNav = By.linkText("Niños");
     By vaticanNav = By.linkText("Vaticano");
     By faqNav = By.linkText("FAQ");
-    By contactsNav = By.linkText("Contactos");
 
     public ColosseumHomePage(WebDriver driver) {
         this.driver = driver;
@@ -45,6 +44,5 @@ public class ColosseumHomePage {
         utils.ClickElement(kidsNav);
         utils.ClickElement(vaticanNav);
         utils.ClickElement(faqNav);
-        utils.ClickElement(contactsNav);
     }
 }
