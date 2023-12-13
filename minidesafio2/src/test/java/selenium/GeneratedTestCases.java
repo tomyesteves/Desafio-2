@@ -224,4 +224,57 @@ public class GeneratedTestCases {
         driver.findElement(By.id("s2")).sendKeys("56");
         driver.findElement(By.id("subbut2")).click();
     }
+
+    @Test
+    public void testAddDays() {
+        driver.get("https://www.timeanddate.com/date/workdays.html");
+        driver.manage().window().setSize(new Dimension(825, 1010));
+        driver.findElement(By.id("datetabs_duration")).click();
+        driver.findElement(By.id("d1")).click();
+        driver.findElement(By.id("d1")).sendKeys("01");
+        driver.findElement(By.id("m1")).click();
+        driver.findElement(By.id("m1")).sendKeys("01");
+        driver.findElement(By.id("y1")).click();
+        driver.findElement(By.id("y1")).sendKeys("2023");
+        {
+            WebElement element = driver.findElement(By.linkText("2019"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).perform();
+        }
+        driver.findElement(By.id("d2")).click();
+        driver.findElement(By.id("d2")).sendKeys("31");
+        driver.findElement(By.id("m2")).click();
+        driver.findElement(By.id("m2")).sendKeys("12");
+        driver.findElement(By.id("y2")).click();
+        driver.findElement(By.id("y2")).sendKeys("2023");
+        driver.findElement(By.id("ti")).click();
+        driver.findElement(By.id("linktimeduration")).click();
+        driver.findElement(By.linkText("Start of Day")).click();
+        driver.findElement(By.id("h1")).sendKeys("0");
+        driver.findElement(By.id("i1")).sendKeys("0");
+        driver.findElement(By.id("s1")).sendKeys("0");
+        driver.findElement(By.cssSelector(".five:nth-child(3) > .mt5:nth-child(2) > .bigger:nth-child(1)")).click();
+        driver.findElement(By.id("h2")).sendKeys("10");
+        driver.findElement(By.id("i2")).sendKeys("10");
+        driver.findElement(By.id("s2")).sendKeys("56");
+        driver.findElement(By.id("subbut2")).click();
+        driver.findElement(By.cssSelector(".btn-datepicker")).click();
+        driver.findElement(By.linkText("enero")).click();
+        driver.findElement(By.linkText("jun")).click();
+        driver.findElement(By.cssSelector(".btn-datepicker")).click();
+        driver.findElement(By.linkText("enero")).click();
+        driver.findElement(By.linkText("sep")).click();
+        driver.findElement(By.linkText("27")).click();
+        driver.findElement(By.id("y1")).sendKeys("2023");
+        driver.findElement(By.id("m1")).sendKeys("9");
+        driver.findElement(By.id("d1")).sendKeys("27");
+        driver.findElement(By.id("ad")).click();
+        driver.findElement(By.id("ad")).sendKeys("100");
+        driver.findElement(By.id("ach")).click();
+        {
+            WebElement dropdown = driver.findElement(By.id("ach"));
+            dropdown.findElement(By.xpath("//option[. = 'Weekends']")).click();
+        }
+        driver.findElement(By.id("subbut")).click();
+    }
 }

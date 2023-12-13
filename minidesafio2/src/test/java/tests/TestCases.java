@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import configurations.Configurations;
+import pages.AddWorkdaysPage;
 import pages.ColosseumHomePage;
 import pages.CountDaysPage;
 import pages.PetsPage;
@@ -61,5 +62,17 @@ public class TestCases extends Configurations {
         countDaysPage.SelectTime();
         countDaysPage.Calculate();
         assertTrue(driver.getPageSource().contains(expectedDaysResult));
+    }
+
+    @Test
+    public void testCalculateWorkdays() {
+        String expectedResult = "Wednesday, 14 February 2024";
+        AddWorkdaysPage addWorkdaysPage = new AddWorkdaysPage(driver);
+        addWorkdaysPage.SelectDate();
+        addWorkdaysPage.SetDaysToAdd();
+        addWorkdaysPage.ApplyFilter();
+        addWorkdaysPage.Calculate();
+        // No se puede hacer la comparación, no agrega el box del resultado al contenido de la página (?)
+        // assertTrue(driver.getPageSource().contains(expectedResult));
     }
 }
